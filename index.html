@@ -24,59 +24,73 @@
         const playerSelectionLower = playerSelection.toLowerCase();
         //case where player is same as computer just output tie
         if (playerSelectionLower == computerSelection) {
-          return "Tie, both of you selected the same object.";
+          return "Tie";
         }
         //if not the same then execute following check
         //if playerselection is rock and
         //computerselection is paper then computer wins
         if (playerSelectionLower == "rock" && computerSelection == "paper") {
-          return "You lose, paper beats rock.";
+          return false;
         }
         //case where you're rock and computer is scissors
         if (playerSelectionLower == "rock" && computerSelection == "scissors") {
-          return "You win, rock beats scissors.";
+          return true;
         }
         //case where you're paper and computer is rock
         if (playerSelectionLower == "paper" && computerSelection == "rock") {
-          return "You win, paper beats rock.";
+          return true;
         }
         //case where you're paper and computer is scissors
         if (
           playerSelectionLower == "paper" &&
           computerSelection == "scissors"
         ) {
-          return "You lose, scissors beats paper";
+          return false;
         }
         //case where you're scissors and computer is rock
         if (playerSelectionLower == "scissors" && computerSelection == "rock") {
-          return "You lose, rock beats scissors.";
+          return false;
         }
         //case where you're scissors and computer is paper
         if (playerSelection == "scissors" && computerSelection == "paper") {
-          return "You win, scissors beats paper";
+          return true;
         }
       };
       
       let game = () =>{
+        const userChoice = prompt("pick your choice");
+        console.log('Your choice ' + userChoice);
         let youWin = 0;
         let computerWin = 0;
+        let compChoice;
         for (let i = 0; i < 5; i++) {
-            
+          compChoice = getComputerChoice();
+          console.log("playing against " + compChoice);
+          let play = playRound(userChoice,compChoice);
+          if(play == "Tie"){
+            console.log("You guys tied this round.");
+          }
+          else if(play){
+            console.log("You win this round");
+            youWin++;
+          }
+          else if(!play){
+            console.log("You lose this");
+            computerWin++;
+          }
         }
+        console.log("Your score: " + youWin + ", Computer score: " + computerWin);
         if(youWin==computerWin){
           return "Lame... You tied with the computer";
         }
         if(youWin>computerWin){
           return "You win!";
         }
-        else{
-          return "You lose."
-        }
+        return "You lose."
 
       }
-      //test here
-      let userSelection = prompt("pick your choice");
-      console.log(playRound('rock','rock'));
+      //DRIVER
+      console.log(game());
     </script>
   </body>
 </html>
