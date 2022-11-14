@@ -58,8 +58,19 @@
       };
       
       let game = () =>{
+        let youWin = 0;
+        let computerWin = 0;
         for (let i = 0; i < 5; i++) {
             
+        }
+        if(youWin==computerWin){
+          return "Lame... You tied with the computer";
+        }
+        if(youWin>computerWin){
+          return "You win!";
+        }
+        else{
+          return "You lose."
         }
 
       }
