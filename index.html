@@ -15,7 +15,14 @@
     <script>
       let yourWins = 0;
       let CPUWins = 0;
-      
+      const gameWinner = (userWins, compWins) => {
+        if(userWins == 5){
+          return "User wins, reloading page";
+        }
+        else if(CPUWins == 5){
+          return "Computer wins, reloading page";
+        }
+      }
       //here btnPressed stores a nodelist which stores all
       //elements under class 'btn'
       const btnPressed = document.querySelectorAll('.btn');
@@ -53,9 +60,9 @@
           const currentResults = document.createElement('h2');
           //add class/style to div
           currentResults.classList.add('currentResults');
+          //if someone obtains 5, reload page
           if(yourWins == 5 || CPUWins == 5){
-            currentResults.textContent = "SOMEONE WON";
-            
+            window.alert(gameWinner(yourWins,CPUWins));
             location.reload();
           }
           else {
