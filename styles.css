@@ -19,3 +19,6 @@ body{
     background-color: rgb(77, 160, 207);
     justify-content: center;
 }
+#banner-title{
+    text-align: center;
+}
