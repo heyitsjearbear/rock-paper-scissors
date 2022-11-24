@@ -25,6 +25,7 @@ body{
 .button-container{
     background-color: rgb(77, 160, 207);
     display: flex;
+    gap: 30px;
     justify-content: center;
     padding-top: 50px;
     padding-bottom: 50px;
