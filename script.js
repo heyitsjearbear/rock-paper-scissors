@@ -57,7 +57,7 @@ btnPressed.forEach((item) => {
       currentResults.textContent =
         "You: " + yourWins + " | Computer: " + CPUWins;
     }
-
+    currentResults.style.fontSize = "10px";
     //append gameresult  message to currentResult div
     gameResult.append(currentResults);
 
