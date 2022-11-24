@@ -14,6 +14,7 @@ body{
 }
 
 .top{
+    font-family: 'Anton', sans-serif;
     display: flex;
     background-color: rgb(77, 160, 207);
     justify-content: center;
