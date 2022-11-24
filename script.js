@@ -46,20 +46,22 @@ btnPressed.forEach((item) => {
     else gameResult.textContent += "YOU TIED!";
 
     //here we cerate div that will go inside results div
-    const currentResults = document.createElement("h2");
+    //const currentResults = document.createElement("h2");
     //add class/style to div
-    currentResults.classList.add("currentResults");
+    //currentResults.classList.add("currentResults");
+    const score = document.querySelector("#score-counter");
     //if someone obtains 5, reload page
     if (yourWins == 5 || CPUWins == 5) {
+      score.textContent =
+        "You: " + yourWins + " | Computer: " + CPUWins;
       window.alert(gameWinner(yourWins, CPUWins));
       location.reload();
     } else {
-      currentResults.textContent =
+      score.textContent =
         "You: " + yourWins + " | Computer: " + CPUWins;
     }
-    currentResults.style.fontSize = "10px";
     //append gameresult  message to currentResult div
-    gameResult.append(currentResults);
+    //gameResult.append(currentResults);
 
     //append whole results to result window
     resultsContainer.append(gameResult);
