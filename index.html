@@ -14,11 +14,8 @@
     <title>Rock, Paper, Scissors</title>
   </head>
   <body>
-    <div class="top" id="banner">
-      <h1 id="banner-title">WELCOME TO MY ROCK, PAPER, SCISSORS GAME</h1>
-    </div>
-    <div class="top" id="picture-background">
-      <img src="imgs/teddy_placeholder.PNG" />
+    <div id="banner">
+      <h1 id="banner-title">Rock Paper Scissors</h1>
     </div>
     <div id="score-counter"></div>
     <div class="button-container">
@@ -26,7 +23,18 @@
       <button class="btn" id="paper">Paper</button>
       <button class="btn" id="scissors">Scissors</button>
     </div>
-    <!--TODO instead of appending to results window at the end of each turn just list one result (override previous)-->
+    <div id="game-progress">
+      <div class="player-box">
+        <h3>YOU</h3>
+        <div class="img-here">img here</div>
+        <div id="your-score">your score</div>
+      </div>
+      <div class="player-box">
+        <h3>COMPUTER</h3>
+        <div class="img-here">img here</div>
+        <div id="cpu-score">cpu score</div>
+      </div>
+    </div>
     <div id="result-window"></div>
     <!--TODO create footer-->
     <script src="script.js"></script>

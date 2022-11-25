@@ -13,23 +13,30 @@ body{
     animation: transitionIn 0.75s;
 }
 
-.top{
-    font-family: 'Anton', sans-serif;
-    display: flex;
-    background-color: rgb(77, 160, 207);
-    justify-content: center;
+body{
+    background-color: rgba(168, 133, 17, 0.295);
+    background-size: 100%;
 }
-#banner-title{
+
+#banner{
+    font-family: 'Anton', sans-serif;
+    justify-content: center;
     text-align: center;
 }
+
 .button-container{
-    background-color: rgb(77, 160, 207);
     display: flex;
     gap: 30px;
     justify-content: center;
     padding-top: 50px;
     padding-bottom: 50px;
 
+}
+@media (max-width:500px){
+    .button-container{
+    flex-direction: column;
+    align-items: center;
+    }
 }
 #score-counter{
     background-color: rgb(77, 160, 207);
@@ -41,5 +48,17 @@ body{
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.25em);
 }
+
+#game-progress{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+@media (max-width:500px){
+    #game-progress{
+    flex-direction: column;
+    }
+}
+
 
 

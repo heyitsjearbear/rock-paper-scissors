@@ -50,8 +50,6 @@ btnPressed.forEach((item) => {
     //add class/style to div
     //currentResults.classList.add("currentResults");
     const score = document.querySelector("#score-counter");
-    //TODO
-    //if someone obtains 5 load end screen page
     if (yourWins == 5 || CPUWins == 5) {
       score.textContent =
         "You: " + yourWins + " | Computer: " + CPUWins;
