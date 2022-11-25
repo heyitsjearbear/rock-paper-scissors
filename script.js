@@ -48,6 +48,9 @@ btnPressed.forEach((item) => {
       againBtn.textContent = 'Play again';
       playAgain.appendChild(againBtn);
       const reloadBtn = document.querySelector('.againBtn');
+      //disable choice buttons
+      btnPressed.forEach(e => e.disabled = true);
+      //reload page on button click
       reloadBtn.addEventListener('click', function (e) {
         window.location.reload();
       });
