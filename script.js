@@ -47,6 +47,10 @@ btnPressed.forEach((item) => {
       againBtn.classList.add('againBtn');
       againBtn.textContent = 'Play again';
       playAgain.appendChild(againBtn);
+      const reloadBtn = document.querySelector('.againBtn');
+      reloadBtn.addEventListener('click', function (e) {
+        window.location.reload();
+      });
     }
     
     
