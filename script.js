@@ -43,14 +43,20 @@ btnPressed.forEach((item) => {
     //if someone reaches 5 create button that will reload page
     if (yourWins == 5 || CPUWins == 5) {
       const playAgain = document.querySelector('#play-again');
+
+      //create button
       const againBtn = document.createElement('button');
       againBtn.classList.add('againBtn');
       againBtn.textContent = 'Play again';
+      //TODO
+      //center button
+      //append to container
       playAgain.appendChild(againBtn);
-      const reloadBtn = document.querySelector('.againBtn');
+      
       //disable choice buttons
       btnPressed.forEach(e => e.disabled = true);
       //reload page on button click
+      const reloadBtn = document.querySelector('.againBtn');
       reloadBtn.addEventListener('click', function (e) {
         window.location.reload();
       });

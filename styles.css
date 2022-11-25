@@ -9,11 +9,11 @@
         transform: translateY(0);
     }
 }
-body{
-    animation: transitionIn 0.75s;
-}
+
+
 
 body{
+    animation: transitionIn 0.75s;
     background-color: rgba(168, 133, 17, 0.295);
     background-size: 100%;
 }
