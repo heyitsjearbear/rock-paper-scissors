@@ -18,52 +18,40 @@ btnPressed.forEach((item) => {
     cpuChoice = getComputerChoice();
     //console.log("Your choice: " + choice + ", computer's choice: " + cpuChoice + '\n');
     const winner = playRound(choice, cpuChoice);
-    const gameDuelMessage =
-      "Your choice: " +
-      choice +
-      ", computer's choice: " +
-      cpuChoice +
-      ". Result: ";
-    //if(winner) console.log("YOU WIN!");
-    //else if(winner==false) console.log("YOU LOSE!");
-    //here grab the div that we want to append to
-    const resultsContainer = document.querySelector("#result-window");
-    //create tag here that we are going to add
-    const gameResult = document.createElement("p");
-    gameResult.classList.add("gameResult");
-    gameResult.textContent = gameDuelMessage;
-    //output text saying we won and increment user wins
+    
+    const gameResult = document.querySelector('#round-result');
+     
     if (winner) {
-      gameResult.textContent += "YOU WIN THIS ROUND!";
       yourWins++;
+      gameResult.textContent = "You won! Your " + choice + " beats CPU's " + cpuChoice;
     }
     //output text saying we lost and increment computer wins
     else if (winner == false) {
-      gameResult.textContent += "YOU LOSE THIS ROUND!";
       CPUWins++;
+      gameResult.textContent = "You lost! Your " + choice + " was beat by CPU's " + cpuChoice;
     }
-    //output we tied
-    else gameResult.textContent += "YOU TIED!";
+    else {
+      gameResult.textContent = "TIED!";
+    }
+    //grab your-score id and update text
+    const yourScore = document.querySelector('#your-score');
+    yourScore.textContent = yourWins;
 
-    //here we cerate div that will go inside results div
-    //const currentResults = document.createElement("h2");
-    //add class/style to div
-    //currentResults.classList.add("currentResults");
-    const score = document.querySelector("#score-counter");
+    //grab cpu-score id and update score based on game output
+    const cpuScore = document.querySelector('#cpu-score');
+    cpuScore.textContent = CPUWins;
+    //if someone reaches 5 create button that will reload page
     if (yourWins == 5 || CPUWins == 5) {
-      score.textContent =
-        "You: " + yourWins + " | Computer: " + CPUWins;
-      window.alert(gameWinner(yourWins, CPUWins));
-      location.reload();
-    } else {
-      score.textContent =
-        "You: " + yourWins + " | Computer: " + CPUWins;
+      const playAgain = document.querySelector('#play-again');
+      const againBtn = document.createElement('button');
+      againBtn.classList.add('againBtn');
+      againBtn.textContent = 'Play again';
+      playAgain.appendChild(againBtn);
     }
-    //append gameresult  message to currentResult div
-    //gameResult.append(currentResults);
+    
+    
 
-    //append whole results to result window
-    resultsContainer.append(gameResult);
+    
   });
 });
 //Function to randomly picks rock paper or scissors

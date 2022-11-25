@@ -32,6 +32,9 @@ body{
     padding-bottom: 50px;
 
 }
+#round-result{
+    text-align: center;
+}
 @media (max-width:500px){
     .button-container{
     flex-direction: column;
