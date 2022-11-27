@@ -48,8 +48,6 @@ btnPressed.forEach((item) => {
       const againBtn = document.createElement('button');
       againBtn.classList.add('againBtn');
       againBtn.textContent = 'Play again';
-      //TODO
-      //center button
       //append to container
       playAgain.appendChild(againBtn);
       

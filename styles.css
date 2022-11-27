@@ -11,11 +11,37 @@
 }
 
 
-
 body{
+    font-family: 'Anton', sans-serif;
     animation: transitionIn 0.75s;
-    background-color: rgba(168, 133, 17, 0.295);
+    background-color: #a885114b;
     background-size: 100%;
+}
+.container{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+footer{
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+}
+#github-img{
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    width: 35px;
+}
+
+#play-again{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
 }
 
 #banner{
@@ -25,6 +51,7 @@ body{
 }
 
 .button-container{
+    
     display: flex;
     gap: 30px;
     justify-content: center;
@@ -62,6 +89,7 @@ body{
     flex-direction: column;
     }
 }
+
 
 
 
